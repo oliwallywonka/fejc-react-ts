@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
+import { PropsWithClassName } from '../../types';
 
-export interface PhoneScreenProps {
-  className?: string;
-}
+export type PhoneScreenProps = PropsWithClassName;
 
 export const PhoneScreen: FC<PhoneScreenProps> = ({
   className
