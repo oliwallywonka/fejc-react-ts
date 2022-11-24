@@ -1,13 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useState } from 'react';
+import { IconPainting } from '../IconPainting/IconPainting';
 
 import { Accordion } from './Accordion';
 
 const icon = (
-  <img
-    alt=""
-    src="https://www.artic.edu/iiif/2/25c31d8d-21a4-9ea1-1d73-6a2eca4dda7e/full/200,/0/default.png"
-  />
+  <IconPainting/>
 );
 
 const defaultStorySettings: ComponentMeta<typeof Accordion> = {

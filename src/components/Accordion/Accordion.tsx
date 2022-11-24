@@ -36,7 +36,7 @@ export const Accordion: FC<AccordionProps> = ({
               </div>
               <div>
                 <h4> { title.length > 21 ? `${title.slice(0, 22)}...` : title } </h4>
-                <p className='font-light'> { subtitle } </p>
+                <p className='font-light' style={{ maxWidth: '40ch' }}> { subtitle } </p>
               </div>
             </div>
             <span className='pr-1' style={{
