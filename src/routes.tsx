@@ -1,5 +1,6 @@
 import { Outlet, RouteObject } from 'react-router-dom';
 import PhoneScreen from './components/PhoneScreen';
+import PaintingDetails from './pages/PaintingDetails';
 
 const routes: RouteObject[] = [
   {
@@ -13,7 +14,7 @@ const routes: RouteObject[] = [
       },
       {
         path: 'paintings/:paintingId',
-        element: <span>Painting placeholder!</span>
+        element: <PaintingDetails/>
       }
     ]
   }
