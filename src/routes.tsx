@@ -1,6 +1,7 @@
 import { Outlet, RouteObject } from 'react-router-dom';
 import PhoneScreen from './components/PhoneScreen';
-import HomeScreen from './components/Screens/HomeScreen';
+import Home from './pages/Home';
+import PaintingDetails from './pages/PaintingDetails';
 
 const routes: RouteObject[] = [
   {
@@ -10,11 +11,11 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <HomeScreen></HomeScreen>
+        element: <Home/>
       },
       {
         path: 'paintings/:paintingId',
-        element: <span>Painting placeholder!</span>
+        element: <PaintingDetails/>
       }
     ]
   }
