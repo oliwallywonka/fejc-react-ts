@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { IconPainting } from '../IconPainting/IconPainting';
 import { Accordion } from './Accordion';
 
 const defaultStorySettings: ComponentMeta<typeof Accordion> = {
@@ -37,7 +38,7 @@ export default defaultStorySettings;
 const Template: ComponentStory<typeof Accordion> = (props) => {
   return (
     <div className="w-full max-w-[600px]">
-      <Accordion {...props} icon={typeof props.icon === 'string' ? <img alt="" src={props.icon}/> : props.icon}/>
+      <Accordion {...props} icon={ <IconPainting/> }/>
     </div>
   );
 };
