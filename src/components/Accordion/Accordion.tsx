@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, ReactNode, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PropsWithClassName } from '../../types';
 import { IconPainting } from '../IconPainting/IconPainting';
+import { notifyManager } from '@tanstack/react-query';
 
 export type AccordionProps = PropsWithChildren & PropsWithClassName & {
   title: string;
@@ -18,9 +19,9 @@ export const Accordion: FC<AccordionProps> = ({
   subtitle,
   children,
   className,
-  onChange
+  onChange = () => {}
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(expanded);
   return (
     <>
       <div className='bg-white font-bold rounded self-center' style={{
@@ -40,18 +41,22 @@ export const Accordion: FC<AccordionProps> = ({
                 <p className='font-light' style={{ maxWidth: '40ch' }}> { subtitle } </p>
               </div>
             </div>
-            <span
-              onClick={() => setOpen(!open)} 
+            <img
+              onClick={() => {
+                setOpen(!open); 
+                onChange(!expanded!); 
+              }} 
+              src='src/resources/ArrowIcon.svg'
               className='pr-1' 
               style={{
-                background: 'url("src/resources/ArrowIcon.svg")',
-                backgroundRepeat: 'no-repeat',
-                display: '',
+                objectPosition: 'center',
+                display: 'block',
+                alignSelf: 'center',
                 height: 25,
                 width: 25,
                 transform: `rotate(${expanded || open? '180deg': '0'})`
               }}
-            ></span> 
+            />
           </div>
 
         </motion.header>
