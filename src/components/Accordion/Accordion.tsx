@@ -8,8 +8,6 @@ export type AccordionProps = PropsWithChildren & PropsWithClassName & {
   subtitle?: string;
   icon?: ReactNode;
   expanded?: boolean;
-  setExpanded?: any;
-  expandedId?: number;
   onChange?: (expanded: boolean) => void;
 };
 
@@ -66,12 +64,6 @@ export const Accordion: FC<AccordionProps> = ({
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
               <section className='p-5'>
-
-                <span>Accordion!</span>
-                <span>Accordion!</span>
-                <span>Accordion!</span>
-                <span>Accordion!</span>
-                <span>Accordion!</span>
                 {children}
               </section>
             </motion.section>

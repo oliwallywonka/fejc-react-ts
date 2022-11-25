@@ -1,9 +1,4 @@
-export interface ResponseArtWorks {
-  data: ArtWork[];
-}
-
-export interface ArtWork {
-  _score:       number;
+export interface ArtworkByArtist {
   thumbnail:    Thumbnail;
   id:           number;
   category_ids: string[];
