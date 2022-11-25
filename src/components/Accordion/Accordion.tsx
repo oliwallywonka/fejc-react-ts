@@ -24,7 +24,7 @@ export const Accordion: FC<AccordionProps> = ({
   const [open, setOpen] = useState(expanded);
   return (
     <>
-      <div className='bg-white font-bold rounded self-center' style={{
+      <div className='py-3 bg-white font-bold rounded self-center' style={{
         width: expanded || open ? '100%' : '95%',
         boxShadow: expanded || open ?'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px': ''
       }}>
@@ -33,12 +33,12 @@ export const Accordion: FC<AccordionProps> = ({
         >
           <div className='flex justify-between items-center p-3'>
             <div className='flex items-center'>
-              <div className='mr-3 ml-1'>
+              <div className='mr-3 ml-1' style={{ minWidth: '40px'}}>
                 { icon }
               </div>
               <div>
                 <h4> { title.length > 21 ? `${title.slice(0, 22)}...` : title } </h4>
-                <p className='font-light' style={{ maxWidth: '40ch' }}> { subtitle } </p>
+                <p className='font-light' style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}> { subtitle } </p>
               </div>
             </div>
             <img
