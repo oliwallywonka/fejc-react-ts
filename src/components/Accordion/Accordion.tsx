@@ -24,7 +24,10 @@ export const Accordion: FC<AccordionProps> = ({
   const [open, setOpen] = useState(expanded);
   return (
     <>
+    <div className='grid'>
+
       <div className='py-3 bg-white font-bold rounded self-center' style={{
+        justifySelf: 'center',
         width: expanded || open ? '100%' : '95%',
         boxShadow: expanded || open ?'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px': ''
       }}>
@@ -80,6 +83,7 @@ export const Accordion: FC<AccordionProps> = ({
           )}
         </AnimatePresence>
       </div>
+    </div>
     </>
   );
 };
