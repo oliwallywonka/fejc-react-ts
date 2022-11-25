@@ -33,7 +33,7 @@ export const Accordion: FC<AccordionProps> = ({
         >
           <div className='flex justify-between items-center p-3'>
             <div className='flex items-center'>
-              <div className='mr-3 ml-1' style={{ minWidth: '40px'}}>
+              <div className='mr-3 ml-1' style={{ minWidth: icon? '40px' : '0px'}}>
                 { icon }
               </div>
               <div>
