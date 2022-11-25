@@ -1,9 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import { IconLink } from './IconLink';
 
 
 const defaultStorySettings: ComponentMeta<typeof IconLink> = {
   title: 'Ch Components/IconLink/Details',
+  decorators: [
+    story => <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+  ],
   component: IconLink,
   args: {
     label: 'Simple Story',
