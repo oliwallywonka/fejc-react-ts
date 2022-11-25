@@ -20,11 +20,12 @@ export const Accordion: FC<AccordionProps> = ({
   className,
   onChange
 }) => {
+  const [open, setOpen] = useState(false);
   return (
     <>
-      <div className='bg-white font-bold rounded' style={{
-        width: expanded ? '100%' : '80%',
-        boxShadow: expanded ?'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px': ''
+      <div className='bg-white font-bold rounded self-center' style={{
+        width: expanded || open ? '100%' : '95%',
+        boxShadow: expanded || open ?'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px': ''
       }}>
         <motion.header
           initial={false}
@@ -39,19 +40,23 @@ export const Accordion: FC<AccordionProps> = ({
                 <p className='font-light' style={{ maxWidth: '40ch' }}> { subtitle } </p>
               </div>
             </div>
-            <span className='pr-1' style={{
-              background: 'url("src/resources/ArrowIcon.svg")',
-              backgroundRepeat: 'no-repeat',
-              display: '',
-              height: 25,
-              width: 25,
-              transform: `rotate(${expanded? '180deg': '0'})`
-            }}> </span> 
+            <span
+              onClick={() => setOpen(!open)} 
+              className='pr-1' 
+              style={{
+                background: 'url("src/resources/ArrowIcon.svg")',
+                backgroundRepeat: 'no-repeat',
+                display: '',
+                height: 25,
+                width: 25,
+                transform: `rotate(${expanded || open? '180deg': '0'})`
+              }}
+            ></span> 
           </div>
 
         </motion.header>
         <AnimatePresence initial={false}>
-          {expanded && (
+          {(expanded || open) && (
             <motion.section
               key='content'
               initial='collapsed'
