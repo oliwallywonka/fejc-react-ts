@@ -54,7 +54,7 @@ export const Accordion: FC<AccordionProps> = ({
                 alignSelf: 'center',
                 height: 25,
                 width: 25,
-                transform: `rotate(${expanded || open? '180deg': '0'})`
+                transform: `rotate(${expanded || open? '0': '180deg'})`
               }}
             />
           </div>
